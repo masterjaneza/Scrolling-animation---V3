@@ -1,6 +1,6 @@
-# Scrolling Animation | V2
+# Scrolling Animation | V3
 
-Welcome to the second version of the **Scrolling Animation** project — where raw function from V1 meets modern flair in V2. This version builds on the foundational scroll-triggered animation demo, polishing the visuals, enhancing responsiveness, and refining how each element enters the stage.
+Welcome to the second version of the **Scrolling Animation** project — where raw function from V2 meets modern flair in V3. This version builds on the foundational scroll-triggered animation demo, polishing the visuals, enhancing responsiveness, and refining how each element enters the stage.
 
 Still HTML + CSS. Still lightweight. But now it’s got style.
 
