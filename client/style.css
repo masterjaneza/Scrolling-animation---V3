@@ -1,0 +1,160 @@
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #18230F 0%, #1F7D53 100%);
+    min-height: 100vh;
+    color: #18230F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #18230F;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #27391C;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    color: #255F38;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+    justify-items: center;
+}
+
+.block {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, #18230F 0%, #1F7D53 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(24, 35, 15, 0.10), 0 1.5px 6px 0 rgba(24, 35, 15, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: appear 1s cubic-bezier(.4,2,.6,1) both;
+    opacity: 0;
+}
+
+.block i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1F7D53;
+    padding: 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #18230F 0%, #27391C 100%);
+    box-shadow: 0 2px 8px rgba(24, 35, 15, 0.10);
+    transition: background 0.3s;
+}
+
+.block span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #18230F;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.block:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(24, 35, 15, 0.18), 0 3px 12px 0 rgba(24, 35, 15, 0.12);
+}
+
+.block:hover i {
+    background: linear-gradient(135deg, #27391C 0%, #18230F 100%);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Unique block backgrounds for variety using the new palette */
+.block-1 i { background: linear-gradient(135deg, #18230F 0%, #27391C 100%);}
+.block-2 i { background: linear-gradient(135deg, #27391C 0%, #255F38 100%);}
+.block-3 i { background: linear-gradient(135deg, #255F38 0%, #1F7D53 100%);}
+.block-4 i { background: linear-gradient(135deg, #1F7D53 0%, #18230F 100%);}
+.block-5 i { background: linear-gradient(135deg, #27391C 0%, #1F7D53 100%);}
+.block-6 i { background: linear-gradient(135deg, #18230F 0%, #255F38 100%);}
+.block-7 i { background: linear-gradient(135deg, #255F38 0%, #27391C 100%);}
+.block-8 i { background: linear-gradient(135deg, #1F7D53 0%, #255F38 100%);}
+.block-9 i { background: linear-gradient(135deg, #27391C 0%, #18230F 100%);}
+.block-10 i { background: linear-gradient(135deg, #18230F 0%, #1F7D53 100%);}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .view {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+    .block {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .view {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+    .block {
+        max-width: 100%;
+        aspect-ratio: 1/1;
+    }
+}
+
+/* Animate blocks on scroll (optional JS, for demo all blocks animate on load) */
+.block {
+    animation-delay: calc(var(--i, 1) * 0.1s);
+}
